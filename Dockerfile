@@ -1,9 +1,7 @@
 FROM centos:centos6 
 
-# Optionally set a maintainer name to let people know who made this image.
 MAINTAINER Adrian Herrera <aherrera@mgage.com>
 
-# Install ansible and its dependencies
 # Install yum dependencies
 RUN yum -y update && \
     yum install -y \
@@ -31,5 +29,6 @@ RUN cd /tmp && \
     curl https://bootstrap.pypa.io/get-pip.py -O &&\
     python2.7 get-pip.py
 
+# Install ansible and its dependencies
 RUN pip install ansible==2.1.0 setuptools==11.3.0 boto3 boto virtualenv==13.1.2 credstash==1.11.0 &&\
     yum clean all && rm -rf /tmp/* /var/tmp/*
