@@ -17,9 +17,9 @@ RUN yum -y update && \
 
 # Install python2.7
 RUN cd /tmp && \
-    curl https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz -O && \
-    tar xvfz Python-2.7.9.tgz && \
-    cd Python-2.7.9 && \
+    curl https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz -O && \
+    tar xvfz Python-2.7.12.tgz && \
+    cd Python-2.7.12 && \
     ./configure --prefix=/usr/local && \
     make && \
     make altinstall
